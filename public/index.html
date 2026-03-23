@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App | Beautiful Forecasts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-900 via-purple-800 to-indigo-900 min-h-screen">
+  <div class="container mx-auto px-4 py-8">
+    <!-- Auth Section -->
+    <div id="auth-section" class="max-w-md mx-auto bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl p-8 border border-white/20">
+      <h2 class="text-3xl font-bold text-white text-center mb-6">Weather App</h2>
+      <div class="mb-4">
+        <label class="block text-white mb-2">Username</label>
+        <input type="text" id="username" class="w-full px-4 py-2 rounded-lg bg-white/20 text-white border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter username">
+      </div>
+      <div class="mb-6">
+        <label class="block text-white mb-2">Password</label>
+        <input type="password" id="password" class="w-full px-4 py-2 rounded-lg bg-white/20 text-white border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter password">
+      </div>
+      <div class="flex gap-4">
+        <button id="login-btn" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition">Login</button>
+        <button id="signup-btn" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 rounded-lg transition">Sign Up</button>
+      </div>
+    </div>
+
+    <!-- Main App Section (hidden until login) -->
+    <div id="app-section" class="hidden">
+      <div class="flex justify-between items-center mb-8">
+        <h1 class="text-3xl font-bold text-white">Welcome, <span id="username-display"></span>!</h1>
+        <button id="logout-btn" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition">Logout</button>
+      </div>
+
+      <!-- Weather Search Card -->
+      <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 mb-8 border border-white/20">
+        <h2 class="text-2xl font-semibold text-white mb-4">Check Weather</h2>
+        <div class="flex gap-4">
+          <input type="text" id="city-input" placeholder="Enter city name" class="flex-1 px-4 py-2 rounded-lg bg-white/20 text-white border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-400">
+          <button id="search-weather" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition">Search</button>
+        </div>
+        <div id="weather-result" class="mt-6 hidden"></div>
+        <button id="save-weather-btn" class="mt-4 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition hidden">Save Weather</button>
+      </div>
+
+      <!-- Saved Weather List -->
+      <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+        <h2 class="text-2xl font-semibold text-white mb-4">Saved Weather</h2>
+        <div id="saved-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Dynamically filled -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
